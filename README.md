@@ -37,6 +37,14 @@ Check then both to add both options in context menu.
 - Open windows propmpt as admin and execute ```pip install robotframework-faker``` to install robotframework-faker.
 - Open windows propmpt as admin and execute ```pip install setuptools``` to install setuptools package.
 - Look for Robot Framework Language Server in the extensions marketplace and install the one from Robocorp.
+- To set up GitHub Self-Hosted Runner:
+  - Execute `mkdir actions-runner; cd actions-runner` to create and enter a folder for the runner.
+  - Execute `Invoke-WebRequest -Uri https://github.com/actions/runner/releases/download/v2.326.0/actions-runner-win-x64-2.326.0.zip -OutFile actions-runner-win-x64-2.326.0.zip` to download the latest runner package.
+  - (Optional) Execute the checksum validation command ```if((Get-FileHash -Path actions-runner-win-x64-2.326.0.zip -Algorithm SHA256).Hash.ToUpper() -ne '<xxxxxxxxyourxxxxxxxxxtokenxxxxxxxx>') { throw 'Computed checksum did not match' }``` to verify the download integrity in Powershell.
+  - Execute the checksum validation command ```Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD/actions-runner-win-x64-2.326.0.zip", "$PWD")``` to extract the installer.
+  - Execute the command ```./config.cmd --url https://github.com/adrianoes/robotframework-and-skulix-calculator_desktop --token YOUT_TOKEN_HERE``` to create the runner and start the configuration experience.
+  - Open PowerShell as admin and eceute the command ```Set-ExecutionPolicy RemoteSigned``` to set the execution policy correctly.
+  - Execute the command ```./run.cmd``` to run it.
 
 # Tests:
 
