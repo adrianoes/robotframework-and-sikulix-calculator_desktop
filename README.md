@@ -42,19 +42,20 @@ Check then both to add both options in context menu.
 # Tests:
 
 - Execute ```robot -d ./results tests``` to run all tests in headless mode and store results in separated folder.
-- Execute ```robot -d ./results .\tests\add_tests.robot``` to run all the tests in the add_tests.robot suite in headless mode and store results in separated folder.
-- Execute ```robot -d ./results -t "add even" tests/add_tests.robot``` to run add even test case inside add_tests.robot suite and store results in separated folder.
+- Execute ```robot -d ./results .\tests\add.robot``` to run all the tests in the add.robot suite in headless mode and store results in separated folder.
+- Execute ```robot -d ./results -t "add even" tests/add.robot``` to run add even test case inside add.robot suite and store results in separated folder.
 - Hit :point_right:**Testing** button on left side bar in VSC and choose the tests you want to execute.
 - Execute ```robot -d results -i BASIC tests``` to run the tests tagged with BASIC tag and store results in separated folder.
-- Execute ```robot -d results -e ADD -e NEGATIVE .\tests\add_tests.robot``` to run all the tests but the ones tagged with ADD, NEGATIVE or both tags inside add_tests.robot suite and store results in separated folder.
-- Execute ```robot -d results -i SUBTRACT -i BASIC .\tests\subtract_tests.robot``` to run all the tests tagged with SUBTRACT, BASIC or both tags inside subtract_tests.robot suite and store results in separated folder.
+- Execute ```robot -d results -e ADD -e NEGATIVE .\tests\add.robot``` to run all the tests but the ones tagged with ADD, NEGATIVE or both tags inside add.robot suite and store results in separated folder.
+- Execute ```robot -d results -i SUBTRACT -i BASIC .\tests\subtract.robot``` to run all the tests tagged with SUBTRACT, BASIC or both tags inside subtract.robot suite and store results in separated folder.
 - Execute ```pabot --testlevelsplit tests``` to run all tests in parallel and headless mode.
 - Execute ```pabot --processes 8 tests``` to run all tests in parallel according to each execution splited in 8 CPU cores which will execute 8 processes at time and headless mode.
 
 # Support:
 
 - [SikuliX](http://sikulix.com/)
-- [robotframework-SikuliLibrary](https://github.com/MarketSquare/robotframework-SikuliLibrary#readme)
+- [robotframework-SikuliLibrary](https://github.com/MarketSquare/robotframework-SikuliLibrary)
+- [SikuliLibrary](https://marketsquare.github.io/robotframework-SikuliLibrary/docs/SikuliLibrary.html)
 - [FakerLibrary](https://marketsquare.github.io/robotframework-faker/)
 - [String](https://robotframework.org/robotframework/latest/libraries/String.html#Remove%20String)
 - [OperatingSystem](https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html)

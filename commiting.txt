@@ -14,7 +14,7 @@ Commiting for second time and so on:
 
 git status
 git add .
-git commit -m "adding api steps, change directory name and removing old custom commands"
+git commit -m "first test created to add 2 numbers. need to fix click in the equal button and create other tests"
 git push -u origin main
 
 (refresh page after api cmds)

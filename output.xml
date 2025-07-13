@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.4 on win32)" generated="2025-07-13T02:10:22.592687" rpa="false" schemaversion="5">
+<suite id="s1" name="Add" source="c:\robotframework-and-skulix-calculator_desktop\tests\add.robot">
+<kw name="start_session" owner="base" type="SETUP">
+<kw name="load_images" owner="base">
+<kw name="Add Image Path" owner="SikuliLibrary">
+<msg time="2025-07-13T02:10:25.622288" level="INFO">[error] ImagePath: add: folder does not exist (C:\robotframework-and-skulix-calculator_desktop\resources\resources\elements)
+[error] ImagePath: add: not valid: c:\robotframework-and-skulix-calculator_desktop\resources\resources\elements</msg>
+<arg>${EXECDIR}\\resources\\elements</arg>
+<doc>Add image path</doc>
+<status status="PASS" start="2025-07-13T02:10:25.599109" elapsed="0.023930"/>
+</kw>
+<status status="PASS" start="2025-07-13T02:10:25.598501" elapsed="0.024952"/>
+</kw>
+<kw name="Click" owner="SikuliLibrary">
+<msg time="2025-07-13T02:10:29.066398" level="INFO">[error] ImagePath: find: not there: icon.png</msg>
+<msg time="2025-07-13T02:10:29.066411" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752365428943.png'/&gt;
+[error] ImagePath: find: not there: icon.png</msg>
+<msg time="2025-07-13T02:10:29.066839" level="FAIL">com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(icon.png -- not valid!) S: 0.699999988079071</msg>
+<arg>icon.png</arg>
+<doc>Click</doc>
+<status status="FAIL" start="2025-07-13T02:10:25.623733" elapsed="3.443950">com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(icon.png -- not valid!) S: 0.699999988079071</status>
+</kw>
+<status status="FAIL" start="2025-07-13T02:10:25.597771" elapsed="3.470095">com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(icon.png -- not valid!) S: 0.699999988079071</status>
+</kw>
+<test id="s1-t1" name="Add Two Random Numbers" line="7">
+<doc>Soma dois números aleatórios entre 0 e 9 usando a calculadora e valida o resultado.</doc>
+<status status="FAIL" start="2025-07-13T02:10:29.068059" elapsed="0.003254">Parent suite setup failed:
+com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(icon.png -- not valid!) S: 0.699999988079071</status>
+</test>
+<kw name="end_session" owner="base" type="TEARDOWN">
+<kw name="Stop Remote Server" owner="SikuliLibrary">
+<msg time="2025-07-13T02:10:29.088363" level="INFO">Robot Framework remote server stopping</msg>
+<doc>Stops the remote server.</doc>
+<status status="PASS" start="2025-07-13T02:10:29.082107" elapsed="0.006467"/>
+</kw>
+<status status="PASS" start="2025-07-13T02:10:29.081810" elapsed="0.006880"/>
+</kw>
+<status status="FAIL" start="2025-07-13T02:10:22.596544" elapsed="6.492206">Suite setup failed:
+com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(icon.png -- not valid!) S: 0.699999988079071</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Add" id="s1" pass="0" fail="1" skip="0">Add</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-07-13T02:10:22.637407" level="WARN">Error in file 'c:\robotframework-and-skulix-calculator_desktop\resources\base.robot' on line 47: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-07-13T02:10:25.594886" level="ERROR">Error in file 'c:\robotframework-and-skulix-calculator_desktop\resources\base.robot' on line 8: Importing library 'RobotFakerLibrary' failed: ModuleNotFoundError: No module named 'RobotFakerLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  c:\Users\UX3402\.vscode\extensions\robocorp.robotframework-lsp-1.13.0\src\robotframework_debug_adapter
+  C:\robotframework-and-skulix-calculator_desktop
+  c:\Users\UX3402\.vscode\extensions\robocorp.robotframework-lsp-1.13.0\src
+  c:\Users\UX3402\.vscode\extensions\robocorp.robotframework-lsp-1.13.0\src\robotframework_ls\vendored
+  C:\Python313\python313.zip
+  C:\Python313\DLLs
+  C:\Python313\Lib
+  C:\Python313
+  C:\Python313\Lib\site-packages
+  C:\Python313\Lib\site-packages\win32
+  C:\Python313\Lib\site-packages\win32\lib
+  C:\Python313\Lib\site-packages\Pythonwin</msg>
+</errors>
+</robot>
