@@ -1,5 +1,5 @@
 *** Settings ***
-Library           SikuliLibrary
+Library           SikuliLibrary    mode=NEW
 Library           OperatingSystem
 Library           String
 Library           Collections
@@ -8,19 +8,18 @@ Library           BuiltIn
 Library           FakerLibrary
 
 *** Variables ***
-
+${SIKULI_JAR}     ${EXECDIR}/sikulixide-2.0.5.jar
 
 *** Keywords ***
 
 load_images
-    Add Image Path    ${EXECDIR}\\resources\\elements
+    Add Image Path    ${EXECDIR}/resources/elements
 
 start_session
-    Run Process    calc.exe
-    Sleep    3s
+    Start Sikuli Process
+    Sleep    2s
     load_images
-    # Click    icon.png
-
+    Click    icon.png
 
 end_session
     Stop Remote Server
@@ -38,27 +37,44 @@ choose_numbers
 _press_number
     [Arguments]    ${num}
     Click    ${num}.png
+    Sleep    0.5
 
 _press_operator
     [Arguments]    ${operator}
     Click    ${operator}.png
+    Sleep    0.5
 
 _copy_result_to_variable
-    Key Down    Ctrl
-    Press Special Key    c
-    Key Up      Ctrl
+    Right Click   resultarea.png
+    Click    copybutton.png
     Sleep    0.5
-    ${clip}=    Evaluate    sys.modules['pyperclip'].paste()
-    RETURN    ${clip}
+    ${clip}=    Evaluate    __import__('pyperclip').paste()
+    ${clip}=    Replace String    ${clip}    ,    .    # Converte vírgula decimal para ponto
+    Log    Clipboard contains: "${clip}"
+    [Return]    ${clip}
+
+_convert_to_number
+    [Arguments]    ${value}
+    ${value}=    Replace String    ${value}    ,    .
+    ${float_value}=    Evaluate    float(${value})
+    ${int_result}=    Run Keyword And Ignore Error    Evaluate    int(${float_value})
+    Run Keyword If    '${int_result}[0]' == 'PASS' and ${float_value} == ${int_result}[1]    Return From Keyword    ${int_result}[1]
+    [Return]    ${float_value}
+
+_compare_numbers
+    [Arguments]    ${result1}    ${result2}
+    ${num1}=    _convert_to_number    ${result1}
+    ${num2}=    _convert_to_number    ${result2}
+    Should Be Equal    ${num1}    ${num2}
 
 _validate_result
-    [Arguments]    ${calc_result}    ${expected_result}
-    Should Be Equal As Strings    ${calc_result}    ${expected_result}
+    [Arguments]    ${calc_result}    ${result_robot}
+    _compare_numbers    ${calc_result}    ${result_robot}
 
 add_two_numbers
     choose_numbers
     _press_number    ${a}
-    _press_operator  +
+    _press_operator  add
     _press_number    ${b}
     _press_operator  equal
     ${result_calc}=  _copy_result_to_variable
@@ -68,7 +84,7 @@ add_two_numbers
 subtract_two_numbers
     choose_numbers
     _press_number    ${a}
-    _press_operator  -
+    _press_operator  subt
     _press_number    ${b}
     _press_operator  equal
     ${result_calc}=  _copy_result_to_variable
@@ -78,7 +94,7 @@ subtract_two_numbers
 multiply_two_numbers
     choose_numbers
     _press_number    ${a}
-    _press_operator  x
+    _press_operator  mult
     _press_number    ${b}
     _press_operator  equal
     ${result_calc}=  _copy_result_to_variable
