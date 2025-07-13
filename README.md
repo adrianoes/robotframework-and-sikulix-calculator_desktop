@@ -1,4 +1,4 @@
-# robotframework-and-skulix-calculator_desktop
+# robotframework-and-sikulix-calculator_desktop
 
 Desktop testing in Windows Calculator app. This project contains basic examples on how to use Robot Framework and SikuliX to execut desktop automated tests in Windows Calculator app. Good practices such as hooks, custom commands and tags, among others, are used. All the necessary support documentation to develop this project is placed here.
 
@@ -44,7 +44,7 @@ Check then both to add both options in context menu.
   - Execute the checksum validation command ```Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD/actions-runner-win-x64-2.326.0.zip", "$PWD")``` to extract the installer.
   - Execute the command ```./config.cmd --url https://github.com/adrianoes/robotframework-and-skulix-calculator_desktop --token YOUT_TOKEN_HERE``` to create the runner and start the configuration experience.
   - Open PowerShell as admin and eceute the command ```Set-ExecutionPolicy RemoteSigned``` to set the execution policy correctly.
-  - Execute the command ```./run.cmd``` to run it.
+  - Navigate to C:\actions-runner by using PowerShell > Execute the command ```./run.cmd``` to run the self-hosted runner. Commit the changes and wait for the tests to start being executed.
 
 # Tests:
 
