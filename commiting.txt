@@ -14,7 +14,7 @@ Commiting for second time and so on:
 
 git status
 git add .
-git commit -m "updating documentation and alowing execution policy"
+git commit -m "updating documentation regarding file hash"
 git push -u origin main
 
 (refresh page after api cmds)
