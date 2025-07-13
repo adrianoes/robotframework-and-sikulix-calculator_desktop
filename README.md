@@ -36,7 +36,6 @@ Check then both to add both options in context menu.
 - Open windows propmpt as admin and execute ```pip install pyperclip``` to install pyperclip.
 - Open windows propmpt as admin and execute ```pip install robotframework-faker``` to install robotframework-faker.
 - Open windows propmpt as admin and execute ```pip install setuptools``` to install setuptools package.
-- Open windows propmpt as admin and execute ```rfbrowser init``` to initialize the Browser library.
 - Look for Robot Framework Language Server in the extensions marketplace and install the one from Robocorp.
 
 # Tests:

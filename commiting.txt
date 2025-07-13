@@ -14,7 +14,7 @@ Commiting for second time and so on:
 
 git status
 git add .
-git commit -m "test created. miss workflow"
+git commit -m "workflow created"
 git push -u origin main
 
 (refresh page after api cmds)
