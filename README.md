@@ -67,3 +67,4 @@ Check then both to add both options in context menu.
 # Tips:
 
 - If timeout error occurs, increase sleep between steps.  
+- Screen scale must be 100%.
